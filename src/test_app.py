@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from pprint import pprint
 
 from app import APP
-from database.models import setup_db, Movie, Actor
+from .database.models import setup_db, Movie, Actor
 
 
 class CastingAgencyTestCase(unittest.TestCase):
