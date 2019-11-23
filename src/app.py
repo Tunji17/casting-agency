@@ -5,7 +5,7 @@ from flask_cors import CORS
 from flask_migrate import Migrate, MigrateCommand
 from pprint import pprint
 from flask_moment import Moment
-from database.models import setup_db, Movie, Actor
+from .database.models import setup_db, Movie, Actor
 from auth.auth import AuthError, requires_auth
 
 def create_app(test_config=None):
