@@ -21,6 +21,12 @@ def create_app(test_config=None):
   
   setup_db(app)
 
+  @app.route('/')
+  def get_token():
+      return jsonify({
+        'live': True,
+      })
+
   @app.route('/callback')
   def get_token():
       access_token = request.args.get('access_token')
