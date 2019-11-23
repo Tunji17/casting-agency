@@ -22,7 +22,7 @@ def create_app(test_config=None):
   setup_db(app)
 
   @app.route('/')
-  def get_token():
+  def home_page():
       return jsonify({
         'live': True,
       })
