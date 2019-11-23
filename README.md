@@ -1,4 +1,4 @@
-# Backend API For Casting Agency App 
+# Backend API For Casting Agency App
 
 ## Getting Started
 
@@ -28,12 +28,15 @@ This will install all of the required packages we selected within the `requireme
 
 - [SQLAlchemy](https://www.sqlalchemy.org/) is the Python SQL toolkit and ORM we'll use handle the lightweight sqlite database. You'll primarily work in app.py and can reference models.py.
 
-- [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we'll use to handle cross origin requests from our frontend server. 
+- [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we'll use to handle cross origin requests from our frontend server.
 
 ## Database Setup
+
 With Postgres running, create a database and add an env variable 'DATABASE_URL' which is your postgres connection url,
 run migrations using:
+
 ```bash
+
 flask db init
 flask db migrate
 flask db upgrade
@@ -56,6 +59,7 @@ Setting the `FLASK_ENV` variable to `development` will detect file changes and r
 Setting the `FLASK_APP` variable to `src/app.py` directs flask to use the app.py` file to run the application.
 
 ## Endpoints
+
 GET '/actors'
 GET '/movies'
 POST '/actors'
@@ -66,7 +70,10 @@ DELETE '/actors/<int:actor_id>'
 DELETE '/movies/<int:movie_id>'
 
 ## Testing
+
 To run the tests, run
+
 ```
-python src/test_app.py
+
+python3 src/test_app.py
 ```
