@@ -72,8 +72,18 @@ DELETE '/movies/<int:movie_id>'
 ## Testing
 
 To run the tests, run
+Working jwt tokens from auth0 for casting agent, casting director and executive producer is declared in the test file
+this can be used to make requests to the endpoints.
 
-```
+```bash
 
 python3 src/test_app.py
+```
+
+### Deployment
+
+The running application is deployed on heroku  with base url 
+
+```bash
+https://casting-agency-flask.herokuapp.com/
 ```
