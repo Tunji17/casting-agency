@@ -1,5 +1,9 @@
 # Backend API For Casting Agency App
 
+## Motivation for project
+
+This is the capstone project for the udacity full stack nanodegree program.
+
 ## Getting Started
 
 ### Installing Dependencies
@@ -58,16 +62,124 @@ Setting the `FLASK_ENV` variable to `development` will detect file changes and r
 
 Setting the `FLASK_APP` variable to `src/app.py` directs flask to use the app.py` file to run the application.
 
+## Casting Agency Specifications
+
+The Casting Agency models a company that is responsible for creating movies and managing and assigning actors to those movies. You are an Executive Producer within the company and are creating a system to simplify and streamline your process.
+
+## Models
+
+Movies with attributes title and release date
+Actors with attributes name, age and gender
+
+## Roles
+
+Casting Assistant
+
+- view:actors
+- view:movies
+
+Casting Director
+
+- All permissions a Casting Assistant has
+- create:actor
+- delete:actor
+- update:actor
+- update:movie
+
+Executive Producer
+
+- All permissions a Casting Director has
+- add:movie
+- delete:movie
+
 ## Endpoints
 
 GET '/actors'
+
+reponse = [
+  {
+    name: tunji,
+    age: 25,
+    gender: male
+  },
+  {
+    name: alice,
+    age: 22,
+    gender: non-binary
+  },
+  {
+    name: bob,
+    age: 27,
+    gender: female
+  }
+]
+
 GET '/movies'
+
+response = [
+  {
+    title: See
+    release_date: 12th November 2019
+  },
+  {
+    title: Jurassic Park
+    release_date: 12th july 2018
+  }
+]
 POST '/actors'
+
+payload = {
+    name: tunji,
+    age: 25,
+    gender: male
+  }
+response = {
+  success: True,
+}
+
 POST '/movies'
+
+payload = {
+    title: See
+    release_date: 12th November 2019
+  }
+response = {
+  success: True,
+}
+
 PATCH '/actors/<int:actor_id>'
+
+payload = {
+    name: teejay,
+    age: 25,
+    gender: male
+  }
+response = {
+  success: True,
+}
+
 PATCH '/movies/<int:movie_id>'
+payload = {
+    title: His Dark Material
+    release_date: 12th November 2019
+  }
+response = {
+  success: True,
+}
+
 DELETE '/actors/<int:actor_id>'
+
+response = {
+  success: True,
+  deleted: actor_id
+}
+
 DELETE '/movies/<int:movie_id>'
+
+response = {
+  success: True,
+  deleted: movie_id
+}
 
 ## Testing
 
@@ -82,7 +194,7 @@ python3 src/test_app.py
 
 ### Deployment
 
-The running application is deployed on heroku  with base url 
+The running application is deployed on heroku  with base url
 
 ```bash
 https://casting-agency-flask.herokuapp.com/

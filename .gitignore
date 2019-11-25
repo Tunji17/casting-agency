@@ -13,4 +13,4 @@ venv
 ehthumbs.db
 Thumbs.db
 
-env_file
+env*

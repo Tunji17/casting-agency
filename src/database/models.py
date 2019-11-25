@@ -24,7 +24,7 @@ def setup_db(app):
     db.init_app(app)
 
 
-class Movie(db.Model):  
+class Movie(db.Model):
     __tablename__ = 'movies'
 
     id = Column(Integer, primary_key=True)
@@ -38,7 +38,7 @@ class Movie(db.Model):
     def insert(self):
         db.session.add(self)
         db.session.commit()
-    
+
     def update(self):
         db.session.commit()
 
@@ -53,7 +53,8 @@ class Movie(db.Model):
           'release_date': self.release_date,
         }
 
-class Actor(db.Model):  
+
+class Actor(db.Model):
     __tablename__ = 'actors'
 
     id = Column(Integer, primary_key=True)
@@ -69,7 +70,7 @@ class Actor(db.Model):
     def insert(self):
         db.session.add(self)
         db.session.commit()
-    
+
     def update(self):
         db.session.commit()
 

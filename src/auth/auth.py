@@ -1,5 +1,5 @@
 import json
-from flask import request, _request_ctx_stack, abort
+from flask import request, abort
 from functools import wraps
 from jose import jwt
 from urllib.request import urlopen
@@ -20,8 +20,9 @@ class AuthError(Exception):
         self.error = error
         self.status_code = status_code
 
+
 '''
-Helper function that verifies authorization 
+Helper function that verifies authorization
 header and returns token without the bearer string
 '''
 
@@ -48,9 +49,10 @@ def get_token_auth_header():
     token = segmented_token[1]
     return token
 
+
 '''
 Helper function that checks if there's a permissions
-list in the decoded token payload and verifies that 
+list in the decoded token payload and verifies that
 the user can perform said action
 '''
 
@@ -68,7 +70,8 @@ def check_permissions(permission, payload):
 
 
 '''
-Helper function that verifies that the token is actually a valid token and decodes it 
+Helper function that verifies that the token is actually
+a valid token and decodes it
 '''
 
 
@@ -112,7 +115,7 @@ def verify_decode_jwt(token):
         except jwt.JWTClaimsError:
             raise AuthError({
                 'code': 'invalid_claims',
-                'description': 'Incorrect claims. Please, check the audience and issuer.'
+                'description': 'Incorrect claims. Please, check the audience.'
             }, 401)
         except Exception:
             raise AuthError({
